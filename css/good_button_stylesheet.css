@@ -1,0 +1,19 @@
+/* グッドボタン */
+.good-button {
+    background-color: #ffcc00; /* 背景色を黄色に */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 少し影を追加して浮き上がらせる */
+}
+
+.good-button:hover {
+    background-color: gray;
+}

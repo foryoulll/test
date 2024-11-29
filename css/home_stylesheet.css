@@ -1,0 +1,101 @@
+/* ハウスボタン */
+.house-button {
+    background-color: gray;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 少し影を追加して浮き上がらせる */
+
+    position: fixed; /* 固定配置 */
+    left: 5%; /* 左からの距離 */
+    top: 25px; /* 上からの距離 */
+
+    z-index: 20;
+}
+
+.house-button:hover {
+    background-color: gray;
+}
+
+.house-button a {
+    color: #fff;
+}
+
+.house-button a:visited {
+    color: #fff;
+}
+
+
+/* メインセクション */
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding-top: 4rem; /* ヘッダー分の余白 */
+}
+
+/* 中央ボタンセクションのスタイル */
+.center-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* ボタン間のスペース */
+    margin-top: 2rem; /* 上下の余白 */
+}
+
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ボタン間のスペース */
+}
+
+.my-profile-item {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* ボタン間のスペース */
+}
+
+/* メインボタンスタイル */
+.main-button {
+    width: 120px;
+    height: 120px;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* 少し透明感を加えた黒背景 */
+}
+
+.my-profile-item .main-button {
+    width: 50%;
+    height: 60px;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(146, 140, 140, 0.7); /* 少し透明感を加えた黒背景 */
+}
+
+.main-button:hover {
+    transform: scale(1.05);
+}
+

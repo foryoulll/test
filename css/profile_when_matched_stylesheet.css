@@ -1,0 +1,11 @@
+.slack-button {
+    position: fixed; /* 固定配置 */
+    left: 15%; /* 左からの距離 */
+    bottom: 30px; /* 下からの距離 */
+}
+
+.insta-button {
+    position: fixed; /* 固定配置 */
+    left: 15%; /* 左からの距離 */
+    bottom: 30px; /* 下からの距離 */
+}

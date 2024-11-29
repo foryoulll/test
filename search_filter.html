@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search filter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common_stylesheet.css">
+    <link rel="stylesheet" href="css/search_filter_stylesheet.css">
+</head>
+</head>
+
+<body>
+    <header>
+        <a href="home.html">
+            <img src="image/logo/logo.png" alt="アプリのロゴ" class="header-logo"> <!-- 画像をヘッダーに追加 -->
+        </a>
+    </header>
+    <main>
+        <!--
+        <div class="attention">
+            <h1>フィルター検索</h1>
+        </div>
+        -->
+
+        <div class="content">
+            <div class="filter-container">
+                <!-- 年齢フィルター -->
+                <div class="filter-group age-group">
+                    <label for="age">
+                        <h3>age:</h3>
+                    </label>
+                    <div class="range-slider">
+                        <input type="range" id="age-min" min="20" max="60" value="20" oninput="updateAgeDisplay()">
+                        <input type="range" id="age-max" min="20" max="60" value="60" oninput="updateAgeDisplay()">
+                    </div>
+                    <div class="age-values">
+                        <span>min: <span id="age-min-display">20</span>歳</span>
+                        <span>max: <span id="age-max-display">60</span>歳</span>
+                    </div>
+                </div>
+
+                <!-- 部署フィルター -->
+                <div class="filter-group department-group">
+                    <label for="department">
+                        <h3>department:</h3>
+                    </label>
+                    <select id="department">
+                        <option value="">選択してください</option>
+                        <option value="営業">営業</option>
+                        <option value="開発">開発</option>
+                        <option value="マーケティング">マーケティング</option>
+                        <option value="人事">人事</option>
+                    </select>
+                </div>
+
+                <!-- MBTI検索フィルター -->
+                <div class="filter-group mbti-group">
+                    <label>
+                        <h3>MBTI:</h3>
+                    </label>
+                    <input type="checkbox" id="mbti-all" onclick="toggleMBTI(this)">
+                    <label for="mbti-all">不問</label>
+
+                    <div id="mbti-options">
+                        <div>
+                            <label>エネルギーの方向</label>
+                            <div class="mbti-index-group">
+                                <input type="radio" id="mbti-i" name="mbti-2" value="I">
+                                <label for="mbti-i">I（内向型）</label>
+                                
+                                <input type="radio" id="mbti-e" name="mbti-2" value="E">
+                                <label for="mbti-e">E（外交型）</label>
+                                
+                                <input type="radio" id="mbti-x2" name="mbti-2" value="X" checked>
+                                <label for="mbti-x2">X（どちらでもない・不問）</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label>ものの見方</label>
+                            <div class="mbti-index-group">
+                                <input type="radio" id="mbti-n" name="mbti-3" value="N">
+                                <label for="mbti-n">N（直感型）</label>
+
+                                <input type="radio" id="mbti-s" name="mbti-3" value="S">
+                                <label for="mbti-s">S（感覚型）</label>
+
+                                <input type="radio" id="mbti-x3" name="mbti-3" value="X" checked>
+                                <label for="mbti-x3">X（どちらでもない・不問）</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label>判断の仕方</label>
+                            <div class="mbti-index-group">
+                                <input type="radio" id="mbti-t" name="mbti-4" value="T">
+                                <label for="mbti-t">T（思考型）</label>
+
+                                <input type="radio" id="mbti-f" name="mbti-4" value="F">
+                                <label for="mbti-f">F（感情型）</label>
+
+                                <input type="radio" id="mbti-x4" name="mbti-4" value="X" checked>
+                                <label for="mbti-x4">X（どちらでもない・不問）</label>
+                            </div>
+                        </div>
+                        <div>
+                            <label>外部との接し方</label>
+                            <div class="mbti-index-group">
+                                <input type="radio" id="mbti-p" name="mbti-5" value="P">
+                                <label for="mbti-p">P（知覚型）</label>
+
+                                <input type="radio" id="mbti-j" name="mbti-5" value="J">
+                                <label for="mbti-j">J（判断型）</label>
+
+                                <input type="radio" id="mbti-x5" name="mbti-5" value="X" checked>
+                                <label for="mbti-x5">X（どちらでもない・不問）</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" onclick="applyFilters()">検索</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function updateAgeDisplay() {
+            const ageMin = parseInt(document.getElementById("age-min").value);
+            const ageMax = parseInt(document.getElementById("age-max").value);
+
+            // 入れ替え防止
+            if (ageMin > ageMax - 1) {
+                document.getElementById("age-min").value = ageMax - 1;
+            }
+            if (ageMax < ageMin + 1) {
+                document.getElementById("age-max").value = ageMin + 1;
+            }
+
+            document.getElementById("age-min-display").textContent = document.getElementById("age-min").value;
+            document.getElementById("age-max-display").textContent = document.getElementById("age-max").value;
+        }
+
+        // 不問チェックボックスのクリック時
+        function toggleMBTI(allCheckbox) {
+            const mbtiOptions = document.querySelectorAll('input[type="radio"][value="X"]');
+        
+            if (allCheckbox.checked) {
+                // 不問がチェックされたら全ての"X"ラジオボタンを選択
+                mbtiOptions.forEach(option => {
+                    option.checked = true;
+                });
+            } else {
+                // 不問が外れたら全ての"X"ラジオボタンをクリア（必要に応じてここを調整）
+                mbtiOptions.forEach(option => {
+                    option.checked = false;
+                });
+            }
+        }
+
+        // 各MBTIオプションのラジオボタンがクリックされたとき
+        document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('change', function () {
+                const allCheckbox = document.getElementById('mbti-all');
+                // 全ての"X"が選択されているかを確認
+                const allXChecked = Array.from(document.querySelectorAll('.mbti-index-group input[type="radio"][value="X"]'))
+                    .every(radio => radio.checked);
+            
+                // 全ての"X"がチェックされていれば不問をチェック、それ以外なら外す
+                allCheckbox.checked = allXChecked;
+            });
+        });
+
+
+        function applyFilters() {
+            const ageMin = document.getElementById("age-min").value;
+            const ageMax = document.getElementById("age-max").value;
+            const department = document.getElementById("department").value;
+
+            const mbtiChecked = Array.from(document.querySelectorAll('input[name="mbti"]:checked'))
+                .map(checkbox => checkbox.value);
+
+            console.log("年齢:", `${ageMin}～${ageMax}`);
+            console.log("部署:", department);
+            console.log("MBTI:", mbtiChecked);
+        }
+
+        /*検索時のアクション*/
+        function applyFilters() {
+            // フィルタの適用処理など（必要に応じて追加）
+
+            // profile.html に遷移する
+            window.location.href = 'profile.html';
+        }
+    </script>
+
+</body>
+
+</html>

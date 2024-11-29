@@ -1,0 +1,82 @@
+/* チャット相手選択セクション */
+.friend-list-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.friend-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央揃え */
+}
+
+.friend-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    width: 500px; /* 固定幅 */
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.friend-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.friend-item a {
+    text-decoration: none; /* 下線を消す */
+    color: #333; /* テキストの色 */
+    display: flex; /* フレックスボックスで子要素を配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+}
+
+.friend-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px; /* アイコンとテキストの間隔 */
+    object-fit: cover; /* 画像が引き延ばされないように */}
+
+.friend-info {
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: space-between; /* テキストとアイコンを左右に配置 */
+    width: 100%; /* 残りのスペースを占有 */
+}
+
+.friend-info h3 {
+    margin: 0; /* マージンを消す */
+    margin-right: 10px; /* pとの間隔 */
+}
+
+.friend-info p {
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.random-match-mark {
+    display: inline-block; /* インラインブロックにして、テキストの周りに余白を追加 */
+    color: #ff4081;
+    padding: 5px 10px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 1.1rem;
+
+    border: 2px solid #ff4081;  /* 枠の太さ、スタイル、色を設定 */
+    border-radius: 5px;       /* 角を丸くしたい場合はこのプロパティを追加 */
+}
+
+.icons {
+    display: flex; /* アイコンを横並びにする */
+    gap: 10px; /* アイコン間のスペース */
+    align-items: center; /* アイコンを垂直方向に中央揃え */
+}
+
+.slack-button a {
+    color: #fff;
+}

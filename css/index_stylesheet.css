@@ -1,0 +1,43 @@
+main {
+    box-sizing: border-box;
+    padding-top: 0;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+/* 中央ボタンセクションのスタイル */
+.center-buttons {
+    width: 100%;
+    display: flex;                   /* Flexboxを有効にする */
+    flex-direction: column;          /* 縦方向に配置する */
+    justify-content: center;         /* 垂直方向に中央揃え */
+    align-items: center;             /* 水平方向に中央揃え */
+}
+
+/* メインボタンスタイル */
+.main-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: 120px;
+    font-size: 1.2rem;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7); /* 少し透明感を加えた黒背景 */
+}
+
+.main-button:hover {
+    transform: scale(1.05);
+}
+

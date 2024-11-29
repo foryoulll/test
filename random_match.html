@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random_match</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/common_stylesheet.css">
+    <link rel="stylesheet" href="css/good_button_stylesheet.css">
+    <link rel="stylesheet" href="css/random_match_stylesheet.css">
+</head>
+<body>
+    <header>
+        <a href="home.html">
+            <img src="image/logo/logo.png" alt="アプリのロゴ" class="header-logo"> <!-- 画像をヘッダーに追加 -->
+        </a>
+    </header>
+    <main>
+        <div class="attention">
+            <h1>random match</h1>
+            <p>ランダムでペアを作成して紹介します</p>
+            <p>毎週月曜日0時に更新されます</p>
+        </div>
+        <div class="content">
+            <section class="profile-card">
+                <div class="icon">
+                    <img src="image/profile/icon.jpg" alt="プロフィール画像" class="profile-image">
+                    <div>
+                        <h2 class="name">梶田 優歩</h2>
+                        <p class="bio">メディア造形学部ファッション造形学科</p>
+                    </div>
+                </div>
+
+                <div class="bubble">医学療法を専攻している方とお話したいです。</div>
+
+                <div class="info">
+                    <p>03"(21)<br>
+                       INFP<br>
+                       <a href="https://www.instagram.com" target="_blank">
+                        @instagram
+                        </a>
+                    </p>
+                    <h3>専攻</h3>
+                    <p>
+                        服飾科<br>
+                        身体障がいのある人に向けた服を作る勉強をしています。
+                    </p>
+
+                    <h3>趣味</h3>
+                    <p>
+                        ・カメラ<br>
+                        ・K-POP
+                    </p>
+                </div>
+            </section>
+
+            <!-- 画像ギャラリー -->
+            <section class="gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-image">
+                        <img src="image/profile/image1.jpg" alt="ギャラリー画像1" data-full="image/profile/image1.jpg">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="image/profile/image2.jpg" alt="ギャラリー画像2" data-full="image/profile/image2.jpg">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="image/profile/image3.jpg" alt="ギャラリー画像3" data-full="image/profile/image3.jpg">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="image/profile/image4.jpg" alt="ギャラリー画像4" data-full="image/profile/image4.jpg">
+                    </div>
+                    <!-- 他の画像も同様に -->
+                </div>
+            </section>
+
+            <!-- モーダル用の要素 -->
+            <div class="modal" id="modal">
+                <img class="modal-content" id="modal-img">
+            </div>
+            
+        </div>
+        <!-- 左下のグッドボタン -->
+        <button class="good-button">
+            <i class="fas fa-thumbs-up"></i>
+        </button>
+    </main>
+
+</body>
+
+<script>
+    const images = document.querySelectorAll('.gallery-grid img');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            const fullImageSrc = image.getAttribute('data-full'); // クリックした画像のデータ属性を取得
+            modalImg.src = fullImageSrc; // モーダル画像のsrcを設定
+            modal.style.display = 'flex'; // モーダルを表示
+        });
+    });
+
+    // モーダルの外側をクリックして閉じる
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+</script>
+
+
+</html>

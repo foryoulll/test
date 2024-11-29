@@ -1,0 +1,85 @@
+/* チャット相手選択セクション */
+.friend-list-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.friend-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 中央揃え */
+}
+
+.friend-item {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    width: 500px; /* 固定幅 */
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.friend-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.friend-item a {
+    text-decoration: none; /* 下線を消す */
+    color: #333; /* テキストの色 */
+    display: flex; /* フレックスボックスで子要素を配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+}
+
+.friend-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px; /* アイコンとテキストの間隔 */
+    object-fit: cover; /* 画像が引き延ばされないように */}
+
+.friend-info {
+    width: 400px;
+    height: 60px;
+    display: flex;              /* Flexboxを有効にする */
+    justify-content: space-between; /* 子要素の間にスペースを分配 */
+    align-items: center;       /* 垂直方向に中央揃え */
+}
+
+.friend-info p {
+    color: #666;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center; /* Aligns text and icon vertically */
+    flex-grow: 1;        /* 段落が利用可能なスペースを占有できるようにする */
+}
+
+
+.good-button {
+    padding: 0;                /* パディングを削除 */
+    margin-left: 8px;          /* テキストとボタンの間にスペースを追加 */
+}
+
+.list-button {
+    background-color: gray; /* 背景色を黄色に */
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* 少し影を追加して浮き上がらせる */
+}
+
+.list-button:hover {
+    background-color: gray;
+}

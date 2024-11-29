@@ -1,0 +1,56 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6fff, #333f5f);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+/* ヘッダー */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7); /* 少し透明感を加えた黒背景 */
+    height: 100px;
+}
+
+.header-logo {
+    height: 70px; /* ロゴのサイズを調整 */
+}
+
+/* メインセクション */
+main {
+    box-sizing: border-box;
+    padding-top: 100px;
+    margin: 0 auto;
+    width: 70%;
+    height: 100%;
+}
+
+/* aタグ */
+a {
+    text-decoration: none; /* 下線を消す */
+}
+
+/* クリック時のスタイルをデフォルトにする */
+a:active {
+    color: inherit; /* 親要素の色を継承 */
+}
+
+/* クリック後の色を変えない */
+a:visited {
+    color: inherit; /* 親要素の色を継承 */
+}

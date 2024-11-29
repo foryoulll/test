@@ -1,0 +1,178 @@
+.content {
+    display: flex; /* フレックスボックスを使って左右に配置 */
+    justify-content: space-between; /* コンテンツ間にスペースを設ける */
+    align-items: flex-start; /* 上詰めで配置 */
+    margin: 20px; /* 上下左右の余白を追加 */
+}
+
+/* プロフィールカード */
+.profile-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 40%;
+    position: relative;
+    margin: 2rem auto; /* 上下のマージンを2rem、左右を自動で中央配置 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* プロフィール画像 */
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    object-fit: cover; /* 画像が引き延ばされないように */
+}
+
+/* 吹き出しのスタイル */
+.bubble {
+    position: relative;
+    background-color: #f0f0f0; /* 吹き出しの背景色 */
+    border-radius: 10px;      /* 吹き出しの角を丸くする */
+    padding: 10px;            /* 吹き出し内の余白 */
+    margin-top: 5px;          /* 吹き出しの位置調整 */
+    max-width: 200px;         /* 吹き出しの最大幅 */
+    text-align: left;         /* テキストを左寄せ */
+    color:#333;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;                 /* 吹き出しの中心に配置 */
+    left: 100%;               /* 吹き出しの右側に配置 */
+    margin-top: -5px;        /* 矢印の位置を調整 */
+    border-width: 5px;       /* 矢印のサイズ */
+    border-style: solid;
+    border-color: transparent transparent transparent #f0f0f0; /* 吹き出しと同じ色の矢印 */
+}
+
+
+.name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.age {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.bio {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+}
+
+/* infoセクション */
+.info {
+    margin: 20px 0;
+    text-align: left; /* 文字列を左寄せ */
+}
+
+.info h3 {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.info p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* グッドボタン */
+.good-button {
+    position: fixed; /* 固定配置 */
+    left: 15%; /* 左からの距離 */
+    bottom: 30px; /* 下からの距離 */
+}
+
+/* 矢印ボタン */
+.arrow-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.arrow-button.left-arrow {
+    left: 10%; /* 左側の位置を少し中央寄りに */
+}
+
+.arrow-button.right-arrow {
+    right: 10%; /* 右側の位置を少し中央寄りに */
+}
+
+.arrow-button:hover {
+    background-color: #555;
+}
+
+/* ギャラリー */
+.gallery {
+    width: 55%;
+    max-width: 600px;
+    text-align: center;
+    margin: 2rem auto;
+    flex: 1; /* 残りのスペースを占める */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列レイアウト */
+    gap: 10px; /* 画像の間のスペース */
+    align-items: start; /* アイテムを上に配置 */
+}
+
+.gallery-image {
+    display: flex; /* フレックスボックスにする */
+    align-items: flex-start; /* 画像を上詰めに配置 */
+}
+
+/* ギャラリー画像 */
+.gallery-grid img {
+    width: 200px;
+    height: 200px; /* 高さを100%に設定して正方形に */
+    border-radius: 8px;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* ホバー時のトランジション効果 */
+}
+
+
+/* モーダルのスタイル */
+.modal {
+    display: none; /* 初期状態は非表示 */
+    position: fixed;
+    z-index: 1000; /* 他の要素の上に表示 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* 背景を黒く */
+    justify-content: center; /* 中央に配置 */
+    align-items: center; /* 中央に配置 */
+}
+
+.modal-content {
+    max-width: 90%; /* 画面幅の90%を最大幅に */
+    max-height: 90%; /* 画面高さの90%を最大高さに */
+}
+

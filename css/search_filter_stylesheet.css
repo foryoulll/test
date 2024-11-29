@@ -1,0 +1,191 @@
+.attention {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    color: #333;
+}
+
+.filter-container {
+    width: 80%;
+    padding: 50px;
+}
+
+.filter-group {
+    margin-bottom: 50px;
+}
+
+.filter-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*
+.range-slider {
+    position: relative;
+    width: 100%;
+}
+
+.range-slider input[type="range"] {
+    position: absolute;
+    width: 100%;
+    pointer-events: none;
+    -webkit-appearance: none;
+    background: transparent;
+}
+
+.range-slider input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 16px;
+    height: 16px;
+    -webkit-appearance: none;
+    background-color: #333f5f;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.age-values {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+*/
+
+/* 年齢フィルター */
+.age-filter {
+    margin-top: 20px;
+}
+.age-filter label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.age-group input[type="range"] {
+    -webkit-appearance: none; /* Safari */
+    width: 100%;
+    height: 10px; /* スライダーの高さ */
+    background: #e0e0e0; /* スライダーの背景色 */
+    border-radius: 5px; /* 角を丸める */
+    outline: none; /* アウトラインを消す */
+}
+.age-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Safari */
+    appearance: none; /* Firefox */
+    width: 20px; /* つまみの幅 */
+    height: 20px; /* つまみの高さ */
+    border-radius: 50%; /* つまみを丸く */
+    background: #2a2e50; /* つまみの色 */
+    cursor: pointer; /* マウスカーソルをポインタに */
+}
+.age-group input[type="range"]::-moz-range-thumb {
+    width: 20px; /* つまみの幅 */
+    height: 20px; /* つまみの高さ */
+    border-radius: 50%; /* つまみを丸く */
+    background: #2a2e50; /* つまみの色 */
+    cursor: pointer; /* マウスカーソルをポインタに */
+}
+.age-group input[type="range"]::-ms-thumb {
+    width: 20px; /* つまみの幅 */
+    height: 20px; /* つまみの高さ */
+    border-radius: 50%; /* つまみを丸く */
+    background: #2a2e50; /* つまみの色 */
+    cursor: pointer; /* マウスカーソルをポインタに */
+}
+
+/* 部署フィルター */
+.department-group select {
+    width: 100%; /* 幅を100%に設定 */
+    padding: 10px; /* パディングを追加 */
+    border-radius: 15px; /* 角を丸く */
+    border: 1px solid #ccc; /* 境界線を設定 */
+    background-color: #f9f9f9; /* 背景色を設定 */
+    font-size: 16px; /* フォントサイズを設定 */
+    appearance: none; /* デフォルトのスタイルを無効に */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,5" fill="#888"/></svg>'); /* ドロップダウン矢印をカスタム */
+    background-repeat: no-repeat; /* 繰り返しを無効に */
+    background-position: right 10px center; /* 矢印の位置を設定 */
+}
+.department-group :focus {
+    border-color: #2a2e50; /* フォーカス時の境界線の色 */
+    outline: none; /* アウトラインを消す */
+}
+
+/* MBTIフィルター */
+.mbti-index-group {
+    display: flex; /* flexboxを使用して横並びに */
+    align-items: center; /* 垂直方向に中央揃え */
+    margin-top: 10px; /* 上部にスペースを追加 */
+    border-bottom: 1px solid #ccc; /* 下線を設定 */
+    padding-bottom: 10px; /* 下側の余白を追加してテキストが境界に近づかないようにする */
+    margin-bottom: 15px; /* 次のグループとの間隔 */
+}
+
+/* チェックボックスとラジオボタンのカスタムスタイル */
+
+input[type="checkbox"],
+input[type="radio"] {
+    display: none; /* デフォルトのチェックボックス・ラジオボタンを隠す */
+    appearance: none; /* デフォルトスタイルを無効化 */
+}
+
+.mbti-index-group label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+/* カスタムチェックボックス */
+input[type="checkbox"] + label::before,
+input[type="radio"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border: 2px solid #2a2e50;
+    border-radius: 4px;
+    margin-right: 8px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+input[type="radio"] + label::before {
+    border-radius: 50%; /* ラジオボタンは丸に */
+}
+
+/* チェックボックスのチェック状態 */
+input[type="checkbox"]:checked + label::before {
+    background-color: #2a2e50;
+    border-color: #2a2e50;
+    content: '\2713'; /* チェックマークを表示 */
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* ラジオボタンのチェック状態 */
+input[type="radio"]:checked + label::before {
+    background-color: #2a2e50;
+    border-color: #2a2e50;
+    content: '';
+}
+
+/* 検索ボタン */
+button {
+    padding: 10px 15px;
+    background-color: #333f5f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2a2e50;
+}
